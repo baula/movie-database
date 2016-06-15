@@ -17,10 +17,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
         tableView.dataSource = self
         tableView.delegate = self
         self.loadDataFromNetwork()
                 // Do any additional setup after loading the view.
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,16 +62,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                                                                             }
                                                                         }
                                                                         MBProgressHUD.hideHUDForView(self.view, animated: true)
-
+                                                                        
         })
         
         
         task.resume()
 
-        
-
-
     
+    }
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        loadDataFromNetwork()
+        // Reload the tableView now that there is new data
+        self.tableView.reloadData()
+        
+        // Tell the refreshControl to stop spinning
+        refreshControl.endRefreshing()
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
