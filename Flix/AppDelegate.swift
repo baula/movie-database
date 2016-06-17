@@ -19,26 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        
+
+        
         let nowPlayingNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
         let nowPlayingViewController = nowPlayingNavigationController.topViewController as! MoviesViewController
         nowPlayingViewController.endpoint = "now_playing"
         nowPlayingNavigationController.tabBarItem.title = "Now Playing"
+        nowPlayingNavigationController.tabBarItem.image = UIImage(named: "video")
         
         let topRatedNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
         let topRatedViewController = topRatedNavigationController.topViewController as! MoviesViewController
         topRatedViewController.endpoint = "top_rated"
         topRatedNavigationController.tabBarItem.title = "Top Rated"
+        topRatedNavigationController.tabBarItem.image = UIImage(named: "user")
         
         let popularNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
         let popularViewController = popularNavigationController.topViewController as! MoviesViewController
         popularViewController.endpoint = "popular"
         popularNavigationController.tabBarItem.title = "Popular"
+        popularNavigationController.tabBarItem.image = UIImage(named: "star")
         
         
         let upcomingNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
         let upcomingViewController = upcomingNavigationController.topViewController as! MoviesViewController
         upcomingViewController.endpoint = "upcoming"
         upcomingNavigationController.tabBarItem.title = "Upcoming"
+        upcomingNavigationController.tabBarItem.image = UIImage(named: "calendar")
         
         
         let tabBarController = UITabBarController()

@@ -102,10 +102,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.title.text = title
         cell.overview.text = overview
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.purpleColor()
+        cell.selectedBackgroundView = backgroundView
         
-        
-        
-        print("row \(indexPath.row)")
         return cell
     }
     
