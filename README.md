@@ -34,8 +34,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. more about what the code for refreshing and loading does
+2. difference between adding tab bar on main storyboard through dragging vs. hard coding
 
 ## Video Walkthrough
 
@@ -43,8 +43,9 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/To6S9e5.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
 Link if GIF is not embedding: https://imgur.com/To6S9e5
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
